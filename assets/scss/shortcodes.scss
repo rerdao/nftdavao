@@ -35,7 +35,7 @@
     &.style-2 {
         background: transparent;
         color: var(--primary-color3);
-        border: 2px solid #FFFFF;
+        border: 2px solid #21E786;
         
     }
     &::before {
@@ -47,23 +47,23 @@
         height: 110%;
         width: 0%;
         content: "";
-        background-color: #FFFFF;
+        background-color: #21E786;
         @include transition3;
     }
     &:hover {
         z-index: 2;
         color: #fff;
         background: transparent;
-        border: 2px solid #FFFFF;
+        border: 2px solid #21E786;
         &::before {
             width: 110%;
             background-color: transparent;
         }
         &.style-2 {
-            background-color: #FFFFF;
+            background-color: #21E786;
             color: var(--primary-color3);
             &::before {
-                background-color: #FFFFF;
+                background-color: #21E786;
             }
         }
         
@@ -142,8 +142,8 @@
         height: 50px;
         top: 0px;
         left: 0px;
-        border-left: 5px solid #FFFFF;   
-        border-top: 5px solid #FFFFF;
+        border-left: 5px solid #21E786;   
+        border-top: 5px solid #21E786;
 
     }
     &::after {
@@ -155,8 +155,8 @@
         height: 50px;
         bottom: 0px;
         right: 0px;
-        border-right: 5px solid #FFFFF;
-        border-bottom: 5px solid #FFFFF;
+        border-right: 5px solid #21E786;
+        border-bottom: 5px solid #21E786;
 
     }
     &.active,
@@ -249,8 +249,8 @@
         height: 50px;
         top: 0px;
         left: 0px;
-        border-left: 5px solid #FFFFF;   
-        border-top: 5px solid #FFFFF;
+        border-left: 5px solid #21E786;   
+        border-top: 5px solid #21E786;
         
     }
     &::after {
@@ -262,8 +262,8 @@
         height: 50px;
         bottom: 0px;
         right: 0px;
-        border-right: 5px solid #FFFFF;
-        border-bottom: 5px solid #FFFFF;
+        border-right: 5px solid #21E786;
+        border-bottom: 5px solid #21E786;
         
     }
     &.active,
@@ -320,8 +320,8 @@
         height: 50px;
         top: 0px;
         left: 0px;
-        border-left: 5px solid #FFFFF;   
-        border-top: 5px solid #FFFFF;
+        border-left: 5px solid #21E786;   
+        border-top: 5px solid #21E786;
         
     }
     &::after {
@@ -333,8 +333,8 @@
         height: 50px;
         bottom: 0px;
         right: 0px;
-        border-right: 5px solid #FFFFF;
-        border-bottom: 5px solid #FFFFF;
+        border-right: 5px solid #21E786;
+        border-bottom: 5px solid #21E786;
         
     }
     &.active,
@@ -797,7 +797,7 @@
         font-weight: 400;
         font-size: 36px;
         line-height: 44px;
-        color: #FFFFF;
+        color: #21E786;
         margin-bottom: 39px;
         .heading {
             color: var(--primary-color3);
@@ -836,7 +836,7 @@
                 font-size:20px;
             }
             &:hover {
-                border-color:#FFFFF ;
+                border-color:#21E786 ;
             }
         }
     }
@@ -1023,7 +1023,7 @@
                     color: #fff;
                     &:hover {
                         &::before {
-                            background-color: #FFFFF;
+                            background-color: #21E786;
                         }
                     }
                 }
@@ -1048,7 +1048,7 @@
                     font-size: 27px;
                 }
                 &:hover {
-                    background-color: #FFFFF;
+                    background-color: #21E786;
                     a {
                         color: #fff;
                     }
@@ -1122,7 +1122,7 @@
                     top: 50%;
                     transform: translateY(-50%);
                     font-size: 20px;
-                    color: #FFFFF;
+                    color: #21E786;
                     @include transition3;
                 }
                 &.active {
@@ -1257,7 +1257,7 @@
                 a {
                     margin-right: 0;
                     border: none;
-                    color: #FFFFF;
+                    color: #21E786;
                     font-family: 'Bakbak One';
                     font-weight: 400;
                     font-size: 14px;
@@ -1613,7 +1613,7 @@
 .logo-slider-wrap {
     white-space: nowrap;
     overflow: hidden;
-    background-color: #FFFFF;
+    background-color: #21E786;
     padding: 9px 80px;
     &:hover {
         .logo-slider-inner  {
@@ -1939,7 +1939,7 @@
             }
             &:hover {
                 cursor: pointer;
-                background-color: #FFFFF;
+                background-color: #21E786;
                 a {
                     color: #fff;
                 }
@@ -2027,7 +2027,7 @@
             font-family: "Bakbak One";
             font-weight: 400;
             font-size: 80px;
-            color: #FFFFF;
+            color: #21E786;
             opacity: 0.3;
             @include transition3;
         }
@@ -2062,7 +2062,7 @@
                 opacity: 0.3;
                 color: transparent;
                 -webkit-text-stroke-width: 1px;
-                -webkit-text-stroke-color: #FFFFF;
+                -webkit-text-stroke-color: #21E786;
                 @include transition3;
             }
             & h3 {
@@ -2080,7 +2080,7 @@
         cursor: pointer;
         .step-title {
             .sub-number {
-                color: #FFFFF;
+                color: #21E786;
                 opacity: 0.8;
             }
         }
@@ -2094,8 +2094,8 @@
         height: 50px;
         top: 0px;
         left: 0px;
-        border-left: 5px solid #FFFFF;   
-        border-top: 5px solid #FFFFF;
+        border-left: 5px solid #21E786;   
+        border-top: 5px solid #21E786;
         
     }
     &::after {
@@ -2107,8 +2107,8 @@
         height: 50px;
         bottom: 0px;
         right: 0px;
-        border-right: 5px solid #FFFFF;
-        border-bottom: 5px solid #FFFFF;
+        border-right: 5px solid #21E786;
+        border-bottom: 5px solid #21E786;
         
     }
     &.active,
@@ -2173,7 +2173,7 @@
             &::after {
                 font-family: 'Font Awesome 5 Pro';
                 font-weight: 300;
-                color: #FFFFF;
+                color: #21E786;
                 content: '\f067';
                 opacity: 0.4;
                 margin-right: 0px;
@@ -2244,7 +2244,7 @@
             }
             &:hover {
                 &::after {
-                    background: #FFFFF;
+                    background: #21E786;
                     color: #141B22;
                 }
             }
@@ -2252,7 +2252,7 @@
         
         & .swiper-button-next {
             &::after {
-                background: #FFFFF;
+                background: #21E786;
                 color: #141B22;
             }
         }
@@ -2298,8 +2298,8 @@
                 height: 50px;
                 top: 0px;
                 left: 0px;
-                border-left: 5px solid #FFFFF;   
-                border-top: 5px solid #FFFFF;
+                border-left: 5px solid #21E786;   
+                border-top: 5px solid #21E786;
                 
             }
             &::after {
@@ -2311,8 +2311,8 @@
                 height: 50px;
                 bottom: 0px;
                 right: 0px;
-                border-right: 5px solid #FFFFF;
-                border-bottom: 5px solid #FFFFF;
+                border-right: 5px solid #21E786;
+                border-bottom: 5px solid #21E786;
                 
             }
             &.active,
@@ -2391,8 +2391,8 @@
             height: 50px;
             top: 0px;
             left: 0px;
-            border-left: 5px solid #FFFFF;   
-            border-top: 5px solid #FFFFF;
+            border-left: 5px solid #21E786;   
+            border-top: 5px solid #21E786;
             
         }
         &::after {
@@ -2404,8 +2404,8 @@
             height: 50px;
             bottom: 0px;
             right: 0px;
-            border-right: 5px solid #FFFFF;
-            border-bottom: 5px solid #FFFFF;
+            border-right: 5px solid #21E786;
+            border-bottom: 5px solid #21E786;
             
         }
         &.active,
@@ -2488,10 +2488,10 @@
             .shape-circle {
                 svg {
                     .fill-1 {
-                        fill: #FFFFF;   
+                        fill: #21E786;   
                     }
                     .fill-2 {
-                        fill: #FFFFF;   
+                        fill: #21E786;   
                     }
                 }
             }
@@ -2583,7 +2583,7 @@
                 &:hover {
                     cursor: pointer;
                     .fill-pri {
-                        fill: #FFFFF;
+                        fill: #21E786;
                     }
                 }
             }
@@ -2613,7 +2613,7 @@
         height: 2.4px !important;
         background: #434343 !important;
         & .swiper-pagination-progressbar-fill {
-            background: #FFFFF;
+            background: #21E786;
             height: 2.4px !important;
         }
     }
@@ -2621,7 +2621,7 @@
         right: 10px;
         &::after {
             content: '\f105';
-            color: #FFFFF;
+            color: #21E786;
         }
     }
     & .swiper-button-prev {
@@ -2631,12 +2631,12 @@
             color: var(--primary-color2);
         }
         &:hover::after {
-            color: #FFFFF;
+            color: #21E786;
         }
     }
     & .swiper-slide.swiper-slide-thumb-active {
         & .fill-pri {
-            fill: #FFFFF;
+            fill: #21E786;
         }
     }
 }
@@ -2838,7 +2838,7 @@
                 font-family: 'Poppins';
                 font-weight: 400;
                 font-size: 14px;
-                color: #FFFFF;
+                color: #21E786;
             }
         }
         & .submit {
@@ -2856,7 +2856,7 @@
             & a {
                 color: var(--primary-color14);
                 &:hover {
-                    color: #FFFFF;
+                    color: #21E786;
                 }
             }
         }
@@ -2908,7 +2908,7 @@
             font-size: 18px;
             color: var(--primary-color2);
             &::before {
-                background-color: #FFFFF;
+                background-color: #21E786;
             }
             &:hover {
                 color: var(--primary-color3);
@@ -2939,7 +2939,7 @@
         font-size: 44px;
         color: var(--primary-color3);
         & span {
-            color: #FFFFF;
+            color: #21E786;
         }
     }
     & p {
@@ -2996,7 +2996,7 @@
             font-size: 44px;
             color: var(--primary-color3);
             & span {
-                color: #FFFFF;
+                color: #21E786;
             }
         }
     }

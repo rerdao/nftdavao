@@ -2,10 +2,10 @@
 @use './abstracts/' as *;
 
 /**
-  * Name: NFT davao | NFT Portfolio HTML Template
+  * Name: NFT Davao | Your NFT Community Hub
   * Version: 1.0.2
   * Author: Themesflat
-  * Author URI: http://www.themesflat.com
+  * Author URI: http://www.nftdavao.xyz
 */
 
 @import "shortcodes.css";
@@ -678,7 +678,7 @@ input[type="submit"] {
     font-family: 'Bakbak One';
     font-size: 16px;
     line-height:24px;
-    background-color: #FFFFF;
+    background-color: #21E786;
     color: #040B11;
     padding: 17px 50px;
     display: inline-block;
@@ -687,7 +687,7 @@ input[type="submit"] {
     &:focus,
     &:hover {
         outline: 0;
-        background: #FFFFF;
+        background: #21E786;
         color: #fff;           
     }
 }
@@ -987,11 +987,11 @@ a {
     --primary-color2: #888B8E;
     --primary-color3: #141B22;
     --primary-color4: #5865F2;
-    --primary-color5: #FFFFF;
+    --primary-color5: #21E786;
     --primary-color6: #F6F6F6;
     --primary-color7: #fff;
     --primary-color8: #fff;
-    --primary-color9: #FFFFF;
+    --primary-color9: #21E786;
     --primary-color10: #C2C3C5; 
     --primary-color11: #141B22;
     --primary-color12: #fff;
@@ -1045,14 +1045,14 @@ a {
     --primary-color2: #C2C3C5;
     --primary-color3: #fff;
     --primary-color4: #141B22;
-    --primary-color5: #FFFFF;
+    --primary-color5: #21E786;
     --primary-color6: #141B22;
     --primary-color7: #040B11;
     --primary-color8: #141B22;
     --primary-color9: #fff;
     --primary-color10: #141B22;
-    --primary-color11: #FFFFF;
-    --primary-color12: #FFFFF;
+    --primary-color11: #21E786;
+    --primary-color12: #21E786;
     --primary-color13:  #fff;
     --primary-color14: #fff;
     --primary-color15: transparent;
@@ -1140,7 +1140,7 @@ header {
                     margin-right: 10px;
                 }
                 &::before {
-                    background-color: #FFFFF ;
+                    background-color: #21E786 ;
                 }
                 &.connect {
                     background-color: var(--primary-color5);
@@ -1977,7 +1977,7 @@ header {
                         background-color: transparent;
                     }
                     &:hover {
-                        border-color: #FFFFF;
+                        border-color: #21E786;
                         background-color: transparent;
                         color: #fff;
                     }
@@ -2048,7 +2048,7 @@ header {
                     background-color: #5865F2;
                     color: #fff;
                     &::before {
-                        background-color: #FFFFF ;
+                        background-color: #21E786 ;
                     }
                 }
             }
@@ -2089,7 +2089,7 @@ header {
                     color: #fff;
                 }
                 &:hover {
-                    background-color: #FFFFF;
+                    background-color: #21E786;
                     cursor: pointer;
                 }
             }
@@ -2169,7 +2169,7 @@ header {
                     background-color: #5865F2;
                     color: #fff;
                     &::before {
-                        background-color: #FFFFF;
+                        background-color: #21E786;
                     }
                 }
             }
