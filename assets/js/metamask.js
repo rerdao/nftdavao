@@ -1,4 +1,3 @@
-<script>
         
        function checkMetaMask() {
             if (typeof window.ethereum !== 'undefined') {
@@ -31,4 +30,3 @@
                 alert('MetaMask is not installed!');
             }
         });
-    </script>
