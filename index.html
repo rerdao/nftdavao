@@ -26,14 +26,29 @@
     <link rel="apple-touch-icon-precomposed" href="assets/icon/favicon.png">
     
     <!-- Solana Wallet  -->
+    <script src="https://solana.com/js/web/1.9.4/web.js"></script>
     <script>
-        function getAccount() {
-          solana.connect().then((x) => {
-            console.log(x.publicKey.toString())
-          })
+      async function getAccount() {
+        const solana = window.solana;
+        if (!solana || !solana.isConnected()) {
+          console.error("Solana not connected!");
+          return;
         }
-      </script>
+  
+        try {
+          const publicKey = await solana.publicKey();
+          const publicKeyString = publicKey.toString();
+          console.log(publicKeyString);
+  
+          // Update the button label with the public key string
+          document.getElementById('connectButton').innerText = publicKeyString;
+        } catch (error) {
+          console.error("Error retrieving account:", error);
+        }
+      }
+    </script>
     <script src="https://solana-labs.github.io/wallet-adapter/dist/wallet-adapter.js"></script>
+
 
 </head>
 
@@ -120,7 +135,10 @@
                                     -->
                                     
                                     <!-- Connect Wallet Solana -->
-                                    <button onClick="javascript:getAccount()">CONNECT</button>
+                                    <button id="connectButton" onclick="getAccount()">CONNECT!</button>
+                                    
+                                    
+                                    
                                    
                                 </div>   
 
