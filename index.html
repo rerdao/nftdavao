@@ -24,6 +24,9 @@
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="assets/icon/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="assets/icon/favicon.png">
+    
+    <!-- Solana Wallet  -->
+    <script src="https://solana-labs.github.io/wallet-adapter/dist/wallet-adapter.js"></script>
 
 </head>
 
@@ -103,7 +106,16 @@
                                         <img id="img-mode" src="assets/images/icon/sun.png" alt="Image">
                                     </a>
                                     <a href="https://discord.gg/Fxbj5zJUWr" class="tf-button discord"><i class="icon-fl-vt"></i><span>DISCORD</span></a>
-                                    <a href="#" class="tf-button connect" data-toggle="modal" data-target="#popup_bid"> <i class="icon-fl-wallet"></i><span>CONNECT</span></a>
+                                    
+                                   
+                                    <!-- Original #popup_bid
+                                        <a href="#" class="tf-button connect" data-toggle="modal" data-target="#popup_bid"> <i class="icon-fl-wallet"></i><span>CONNECT</span></a> 
+                                    -->
+                                    
+                                    <!-- Connect Wallet Solana -->
+                                    <a href="#" class="tf-button connect" onclick="connectToPhantom()">
+                                        <i class="icon-fl-wallet"></i><span>CONNECT</span>
+                                    </a>
                                    
                                 </div>   
 
