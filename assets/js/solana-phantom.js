@@ -1,8 +1,16 @@
-function connectToPhantom() {
-    const wallet = new WalletAdapter.WalletAdapter({
-        provider: window.solana,
-        preferredTestnet: 'mainnet-beta' // Specify mainnet-beta instead of devnet
-    });
+function connectToPhantom()
+{
+window.solana.connect();
+window.solana.request({ method: "connect" })
+  
+window.solana.isConnected
+window.solana.autoApproved
 
-    wallet.connect();
+  document.getElementById("user-account").innerHTML = window.solana.publicKey;
+}
+
+function disconnectPhantom()
+{
+  window.solana.disconnect();
+  window.solana.on('disconnect', () => console.log("disconnected!"))
 }
