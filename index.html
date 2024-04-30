@@ -67,6 +67,27 @@
             // Add a click event listener to the connect button
             connectButton.addEventListener('click', connectToPhantom);
         </script>
+
+            <!--  Wallet Connect -->
+    <script type="module" >
+        import { EthereumClient, w3mConnectors, w3mProvider } from './node_modules/@web3modal/ethereum'
+        import { Web3Modal } from './node_modules/@web3modal/html'
+        import { configureChains, createClient } from './node_modules/@wagmi/core'
+        import { arbitrum, mainnet, polygon } from './node_modules/@wagmi/core/chains'
+  
+        const chains = [arbitrum, mainnet, polygon]
+        const projectId = 'YOUR_PROJECT_ID'
+  
+        const { provider } = configureChains(chains, [w3mProvider({ projectId })])
+        const wagmiClient = createClient({
+          autoConnect: true,
+          connectors: w3mConnectors({ projectId, version: 1, chains }),
+          provider
+        })
+        const ethereumClient = new EthereumClient(wagmiClient, chains)
+        const web3modal = new Web3Modal({ projectId }, ethereumClient)
+      </script>
+
   
 
 </head>
@@ -172,9 +193,9 @@
                                                     <div class="btn-slider ">
 
                                                         <!-- ORIG  <a href="" class="tf-button style-1" onClick="javascript:getAccount()">CONNECT</a> -->
-                                                                                                                
+                                                        <a href="#" class="tf-button " data-toggle="modal" data-target="#popup_bid">CONNECT WALLET</a>                                                      
                                                         <a href="https://8at1ufco7lm.typeform.com/to/vTt5JsZh" class="tf-button style-2">WHITELIST NOW</a>
-                                                        <a href="#" class="tf-button style-1" onclick="javascript:getAccount()" >CONNECT</a>
+                                                        
                                                        
                                                     </div>
                                                 </div>
@@ -1966,18 +1987,19 @@
                     <h3>Connect Your Wallet</h3>  
                     <p class="sub-heading">Select what network and wallet you want to connect below</p>
                     
-                    <div class="tf-wallet">
+                    <div class="tf-wallet" onclick="connectmetamask()" style="cursor: pointer">
                         
                         <div class="image">
-                            <img src="assets/images/svg/icon-wallet-1.svg" alt="Image">
+                            <img src="assets/images/svg/icon-wallet-1.svg" alt="Image" >
                         </div>
-                        <div class="content">
-                            <div class="title">Meta Mask</div>
-                            <div class="sub" onclick="connectToMetaMask()">Conntect to you Metamask wallet</div>
+                        <div class="content" >
+                           
+                            <div class="title">Meta Mask </div>
+                            <div class="sub" >Connect to you Metamask wallet</div>
                         </div>
                     </div>
                     
-                    <div class="tf-wallet">
+                    <div class="tf-wallet" onclick="connectToPhantom()" style="cursor: pointer">
                         <div class="image">
                             <img src="assets/images/logo/phantom.png" alt="Image">
                         </div>
@@ -1986,15 +2008,9 @@
                             <div class="sub">Conntect to your Phantom wallet</div>
                         </div>
                     </div>
-                    <div class="tf-wallet mb30">
-                        <div class="image">
-                            <img src="assets/images/svg/icon-wallet-4.svg" alt="Image">
-                        </div>
-                        <div class="content">
-                            <div class="title">Wallet Connect</div>
-                            <div class="sub">Scan with your mobile device to connect</div>
-                        </div>
-                    </div>
+
+                        
+                    
                     <div class="bottom">By connecting your wallet, you agree to our <a href="#">Terms of Service</a> and our <a href="#">Privacy Policy.</a></div>
                 </div>
             </div>
@@ -2016,9 +2032,28 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/solana-phantom.js"></script>
     <script src="assets/js/metamask.js"></script>
-    
-    
 
+
+    <script>
+  
+        // Identify the accounts and connect MetaMask to the website.
+        function connectmetamask() {
+            ethereum.request({
+                method: 'eth_requestAccounts'     // Use the eth_requestAccounts method to promt the user to select and connect an account.
+             
+             // Log and error in the console if the user refuses the connection. 
+            }).then(handleAccountsChanged).catch((error) => {    
+                if (error.code === 4001) {
+                    // EIP-1193 userRejectedRequest error
+                    console.log('Please connect to MetaMask.');
+                } else {
+                    console.error(error);
+                }
+            });
+        }
+       </script>
+
+       
 </body>
 
 </html>
