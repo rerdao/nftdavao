@@ -26,6 +26,13 @@
     <link rel="apple-touch-icon-precomposed" href="assets/icon/favicon.png">
     
     <!-- Solana Wallet  -->
+    <script>
+        function getAccount() {
+          solana.connect().then((x) => {
+            console.log(x.publicKey.toString())
+          })
+        }
+      </script>
     <script src="https://solana-labs.github.io/wallet-adapter/dist/wallet-adapter.js"></script>
 
 </head>
@@ -113,9 +120,7 @@
                                     -->
                                     
                                     <!-- Connect Wallet Solana -->
-                                    <a href="#" class="tf-button connect" onclick="connectToPhantom()">
-                                        <i class="icon-fl-wallet"></i><span>CONNEK</span>
-                                    </a>
+                                    <button onClick="javascript:getAccount()">Click me!</button>
                                    
                                 </div>   
 
