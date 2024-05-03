@@ -1,27 +1,31 @@
 'use strict';
-function Util(){};
-Util.setAttributes = function (el, attrs) {
-    for (var key in attrs) {
-        el.setAttribute(key, attrs[key]);
-    }
-};
 
 (function () {
+    function Util() {}
+
+    Util.setAttributes = function (el, attrs) {
+        for (var key in attrs) {
+            if (Object.prototype.hasOwnProperty.call(attrs, key)) {
+                el.setAttribute(key, attrs[key]);
+            }
+        }
+    };
+
     var CountDown = function (element) {
         this.element = element;
         this.labels = this.element.getAttribute('data-labels') ? this.element.getAttribute('data-labels').split(',') : [];
-        this.intervalId;
+        this.intervalId = null;
         // set visible labels
         this.setVisibleLabels();
-        //create countdown HTML
+        // create countdown HTML
         this.createCountDown();
-        //store time elements
-        this.days = this.element.getElementsByClassName('js-countdown__value--0')[0];
-        this.hours = this.element.getElementsByClassName('js-countdown__value--1')[0];
-        this.mins = this.element.getElementsByClassName('js-countdown__value--2')[0];
-        this.secs = this.element.getElementsByClassName('js-countdown__value--3')[0];
+        // store time elements
+        this.days = this.element.querySelector('.js-countdown__value--0');
+        this.hours = this.element.querySelector('.js-countdown__value--1');
+        this.mins = this.element.querySelector('.js-countdown__value--2');
+        this.secs = this.element.querySelector('.js-countdown__value--3');
         this.endTime = this.getEndTime();
-        //init counter
+        // init counter
         this.initCountDown();
     };
 
@@ -34,7 +38,7 @@ Util.setAttributes = function (el, attrs) {
 
     CountDown.prototype.createCountDown = function () {
         var wrapper = document.createElement("div");
-        Util.setAttributes(wrapper, {'aria-hidden': 'true', 'class': 'countdown__timer'});
+        Util.setAttributes(wrapper, { 'aria-hidden': 'true', 'class': 'countdown__timer' });
 
         for (var i = 0; i < 4; i++) {
             var timeItem = document.createElement("span"),
@@ -46,7 +50,7 @@ Util.setAttributes = function (el, attrs) {
             timeItem.appendChild(timeValue);
 
             if (this.labels && this.labels.length > 0) {
-                timeLabel.textContent = this.labels[i].trim();
+                timeLabel.textContent = this.labels[i] ? this.labels[i].trim() : '';
                 timeLabel.setAttribute('class', 'countdown__label');
                 timeItem.appendChild(timeLabel);
             }
@@ -55,12 +59,11 @@ Util.setAttributes = function (el, attrs) {
         }
         // append new content to countdown element
         this.element.insertBefore(wrapper, this.element.firstChild);
-        // this.element.appendChild(wrapper);
     };
 
     CountDown.prototype.getEndTime = function () {
         // get number of remaining seconds
-        if (this.element.getAttribute('data-timer')) return Number(this.element.getAttribute('data-timer')) * 1000 + new Date().getTime();
+        if (this.element.getAttribute('data-timer')) return Number(this.element.getAttribute('data-timer')) * 1000 + new Date("May 3, 2024 15:00:10").getTime();
         else if (this.element.getAttribute('data-countdown')) return Number(new Date(this.element.getAttribute('data-countdown')).getTime());
     };
 
@@ -73,25 +76,18 @@ Util.setAttributes = function (el, attrs) {
     };
 
     CountDown.prototype.updateCountDown = function (bool) {
-        // original countdown function
-        // https://gist.github.com/adriennetacke/f5a25c304f1b7b4a6fa42db70415bad2
-        var time = parseInt((this.endTime - new Date().getTime()) / 1000),
-            days = 0,
-            hours = 0,
-            mins = 0,
-            seconds = 0;
-
+        var time = Math.floor((this.endTime - Date.now()) / 1000);
         if (isNaN(time) || time < 0) {
             clearInterval(this.intervalId);
             this.emitEndEvent();
         } else {
-            days = parseInt(time / 86400);
+            var days = parseInt(time / 86400);
             time = (time % 86400);
-            hours = parseInt(time / 3600);
+            var hours = parseInt(time / 3600);
             time = (time % 3600);
-            mins = parseInt(time / 60);
+            var mins = parseInt(time / 60);
             time = (time % 60);
-            seconds = parseInt(time);
+            var seconds = parseInt(time);
         }
 
         // hide days/hours/mins if not available
@@ -115,18 +111,12 @@ Util.setAttributes = function (el, attrs) {
     };
 
     // Functions calling
-    window.addEventListener ('load', function () {
-        //initialize the CountDown objects
-/*        window.setTimeout(() => {*/
-            var countDown = document.getElementsByClassName('js-countdown');
-            if (countDown.length > 0) {
-                for (var i = 0; i < countDown.length; i++) {
-                    (function (i) {
-                        new CountDown(countDown[i]);
-                    })(i);
-                }
-            }
-  /*      }, 1000);*/
-
+    window.addEventListener('load', function () {
+        var countDown = document.querySelectorAll('.js-countdown');
+        if (countDown.length > 0) {
+            countDown.forEach(function (element) {
+                new CountDown(element);
+            });
+        }
     });
-}());
+})();
