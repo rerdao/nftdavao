@@ -27,46 +27,8 @@
     
     <!-- Solana Wallet  -->
     <script src="https://cdn.jsdelivr.net/npm/@solana/web3.js@1.73.0/lib/index.min.js"></script>
+ 
 
-        <script>
-            const connectButton = document.getElementById('connectButton');
-
-            // Check if the Phantom wallet is installed
-            async function checkPhantomWallet() {
-                try {
-                // Check if the window object has the solana object
-                if (!window.solana || !window.solana.isPhantom) {
-                    alert('Please install the Phantom wallet extension');
-                    return false;
-                }
-                return true;
-                } catch (error) {
-                console.error('Error checking Phantom wallet:', error);
-                return false;
-                }
-            }
-
-            // Connect to the Phantom wallet
-            async function connectToPhantom() {
-                try {
-                // Check if the Phantom wallet is installed
-                const isPhantomInstalled = await checkPhantomWallet();
-                if (!isPhantomInstalled) return;
-
-                // Request access to the user's Phantom wallet
-                await window.solana.connect();
-
-                // Get the user's public key (address)
-                const userPublicKey = window.solana.publicKey.toString();
-                console.log('Connected user public key:', userPublicKey);
-                } catch (error) {
-                console.error('Error connecting to Phantom wallet:', error);
-                }
-            }
-
-            // Add a click event listener to the connect button
-            connectButton.addEventListener('click', connectToPhantom);
-        </script>
 
             <!--  Wallet Connect -->
     <script type="module" >
@@ -88,6 +50,25 @@
         const web3modal = new Web3Modal({ projectId }, ethereumClient)
       </script>
 
+
+<script>
+  
+    // Identify the accounts and connect MetaMask to the website.
+    function connectMetamask() {
+        ethereum.request({
+            method: 'eth_requestAccounts'     // Use the eth_requestAccounts method to promt the user to select and connect an account.
+         
+         // Log and error in the console if the user refuses the connection. 
+        }).then(handleAccountsChanged).catch((error) => {    
+            if (error.code === 4001) {
+                // EIP-1193 userRejectedRequest error
+                console.log('Please connect to MetaMask.');
+            } else {
+                console.error(error);
+            }
+        });
+    }
+   </script>
   
 
 </head>
@@ -1987,10 +1968,10 @@
                     <h3>Connect Your Wallet</h3>  
                     <p class="sub-heading">Select what network and wallet you want to connect below</p>
                     
-                    <div class="tf-wallet" onclick="connectmetamask()" style="cursor: pointer">
+                    <div class="tf-wallet" style="cursor: pointer">
                         
                         <div class="image">
-                            <img src="assets/images/svg/icon-wallet-1.svg" alt="Image" >
+                            <img src="assets/images/svg/icon-wallet-1.svg" alt="Image" onclick="checkMetaMask()">
                         </div>
                         <div class="content" >
                            
@@ -1999,13 +1980,14 @@
                         </div>
                     </div>
                     
-                    <div class="tf-wallet" onclick="connectToPhantom()" style="cursor: pointer">
+                    <div class="tf-wallet"  style="cursor: pointer">
                         <div class="image">
-                            <img src="assets/images/logo/phantom.png" alt="Image">
+                            <img src="assets/images/logo/phantom.png" alt="Image" onclick="connectToPhantom()">
                         </div>
                         <div class="content">
                             <div class="title">Phantom</div>
                             <div class="sub">Conntect to your Phantom wallet</div>
+                            
                         </div>
                     </div>
 
@@ -2034,24 +2016,6 @@
     <script src="assets/js/metamask.js"></script>
 
 
-    <script>
-  
-        // Identify the accounts and connect MetaMask to the website.
-        function connectmetamask() {
-            ethereum.request({
-                method: 'eth_requestAccounts'     // Use the eth_requestAccounts method to promt the user to select and connect an account.
-             
-             // Log and error in the console if the user refuses the connection. 
-            }).then(handleAccountsChanged).catch((error) => {    
-                if (error.code === 4001) {
-                    // EIP-1193 userRejectedRequest error
-                    console.log('Please connect to MetaMask.');
-                } else {
-                    console.error(error);
-                }
-            });
-        }
-       </script>
 
        
 </body>
