@@ -9313,3 +9313,26 @@ html {
     }
   }
   /*# sourceMappingURL=bootstrap.css.map */
+
+  /* Updated changes for screens - ROD*/
+
+  /* For screens wider than 768px */
+@media (min-width: 768px) {
+  .comming-soon-inner {
+    width: 70%;
+  }
+  .feat-box iframe {
+    width: 560px;
+    height: 315px;
+  }
+}
+
+/* For screens smaller than 768px */
+@media (max-width: 768px) {
+  .comming-soon-inner {
+    width: 90%;
+  }
+  .feat-box iframe {
+    width: 100%;
+  }
+}

@@ -63,7 +63,7 @@
 
     CountDown.prototype.getEndTime = function () {
         // get number of remaining seconds
-        if (this.element.getAttribute('data-timer')) return Number(this.element.getAttribute('data-timer')) * 1000 + new Date("May 2, 2024 15:00:10").getTime();
+        if (this.element.getAttribute('data-timer')) return Number(this.element.getAttribute('data-timer')) * 1000 + new Date("May 3, 2024 15:56:00").getTime();
         else if (this.element.getAttribute('data-countdown')) return Number(new Date(this.element.getAttribute('data-countdown')).getTime());
     };
 
